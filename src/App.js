@@ -146,8 +146,9 @@ function App() {
                 className="w-24 h-24 mx-auto object-contain"
               />
               <p className="font-bold capitalize mt-2">
-                {p.name}{p.isCustom ? ' (Custom)' : ''}
+                {p.name}{p.isCustom ? ' (new)' : ''}
               </p>
+              <p className="text-gray-500 font-mono">{'#' + p.id}</p>
             </div>
           ))}
         </div>
@@ -173,14 +174,14 @@ function App() {
               />
               <input
                 className="bg-zinc-900 p-2 rounded border border-zinc-700"
-                placeholder="Height"
+                placeholder="Height (meters)"
                 type="number"
                 value={formData.height}
                 onChange={e => setFormData({ ...formData, height: e.target.value })}
               />
               <input
                 className="bg-zinc-900 p-2 rounded border border-zinc-700"
-                placeholder="Weight"
+                placeholder="Weight (kilograms)"
                 type="number"
                 value={formData.weight}
                 onChange={e => setFormData({ ...formData, weight: e.target.value })}
